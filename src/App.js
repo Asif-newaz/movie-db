@@ -9,7 +9,7 @@ function App() {
 
   async function fetchMoviesHandler() {
     setIsLoading(true);
-    const response = await fetch("https://swapi.dev/api/films");
+    const response = await fetch("https://swapi.dev/api/film");
     const data = await response.json();
     const transformedMovies = data.results.map((movieData) => {
       return {
@@ -33,7 +33,7 @@ function App() {
         {!isLoading && movies.length === 0 && (
           <p style={{ fontSize: "1.2rem" }}>No movies found.</p>
         )}
-        {isLoading && "...Loading"}
+        {isLoading && "Loading..."}
       </section>
     </React.Fragment>
   );
